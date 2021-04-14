@@ -8,8 +8,6 @@
 class Contact {
     static let shared = Contact()
     
-    var contacts: [Person] = []
-    
     private init() {}
     
     let names = ["John",

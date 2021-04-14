@@ -22,18 +22,24 @@ struct Person {
 extension Person {
     
     static func getPerson() -> [Person] {
-        for _ in 1...5 {
-            let contact = Person(
-                name: Contact.shared.names.randomElement() ?? "",
-                surname: Contact.shared.surnames.randomElement() ?? "",
-                email: Contact.shared.emails.randomElement() ?? "",
-                number: Contact.shared.numbers.randomElement() ?? ""
-            )
-            Contact.shared.contacts.append(contact)
+        
+        var contacts: [Person] = []
+        
+        let names = Contact.shared.names.shuffled()
+        let surnames = Contact.shared.surnames.shuffled()
+        let emails = Contact.shared.emails.shuffled()
+        let phoneNumbers = Contact.shared.numbers.shuffled()
+        
+        for index in 0..<names.count {
+            let contact = Person(name: names[index],
+                                surname: surnames[index],
+                                email: emails[index],
+                                number: phoneNumbers[index])
+            
+            contacts.append(contact)
         }
-        return Contact.shared.contacts
+        return contacts
     }
-    
 }
 
 

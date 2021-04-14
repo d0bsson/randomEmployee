@@ -9,15 +9,13 @@ import UIKit
 
 class ListEmployeeViewController: UITableViewController {
     
-    private var contacts = Person.getPerson()
+    var contacts: [Person]!
     
 
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         contacts.count
-//        10
-        
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -26,15 +24,16 @@ class ListEmployeeViewController: UITableViewController {
         var content = cell.defaultContentConfiguration()
         content.text = contact.fullName
         cell.contentConfiguration = content
-//        print(contacts)
-//        print(contacts)
-//        cell.textLabel?.text = "asdas"
         return cell
     }
 
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let DitailsVC = segue.destination as? DitailsViewController else { return }
+        guard let indexPath = tableView.indexPathForSelectedRow else { return }
+        let contact = contacts[indexPath.row]
+        DitailsVC.contact = contact
     }
     
     // MARK: - private functions
