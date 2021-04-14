@@ -24,6 +24,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="v3U-23-DPF" kind="show" id="fsA-Ht-UIJ"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -91,6 +94,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UOn-aE-s2Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2736" y="78"/>
+        </scene>
+        <!--Ditails Table View Controller-->
+        <scene sceneID="ixj-HG-lbh">
+            <objects>
+                <viewController id="v3U-23-DPF" customClass="DitailsTableViewController" customModule="randomEmployee" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aBE-j7-QKB">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="WgD-e0-RyO"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="qnp-AA-rqa"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TgJ-M7-Ctr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3506" y="786"/>
         </scene>
         <!--Item-->
         <scene sceneID="UFk-VG-ofy">

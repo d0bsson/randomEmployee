@@ -15,8 +15,8 @@ class ListEmployeeViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        contacts.count
-        10
+        contacts.count
+//        10
         
     }
     
@@ -24,8 +24,11 @@ class ListEmployeeViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "employeeInfo", for: indexPath)
         let contact = contacts[indexPath.row]
         var content = cell.defaultContentConfiguration()
-        content.text = contact.name
-        print(contacts)
+        content.text = contact.fullName
+        cell.contentConfiguration = content
+//        print(contacts)
+//        print(contacts)
+//        cell.textLabel?.text = "asdas"
         return cell
     }
 

@@ -14,16 +14,15 @@ struct Person {
     let number: String
     
     var fullName: String {
-        "\(name) + \(surname)"
+        "\(name) \("") \(surname)"
     }
-    
     
 }
 
 extension Person {
     
     static func getPerson() -> [Person] {
-        for _ in 1...10 {
+        for _ in 1...5 {
             let contact = Person(
                 name: Contact.shared.names.randomElement() ?? "",
                 surname: Contact.shared.surnames.randomElement() ?? "",
